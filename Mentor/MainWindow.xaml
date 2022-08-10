@@ -1,0 +1,23 @@
+﻿<Window x:Class="Mentor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mentor" 
+        xmlns:char_views="clr-namespace:Mentor.Views.Character"
+        xmlns:char_vms="clr-namespace:Mentor.ViewModels.Character"
+        mc:Ignorable="d"
+        Title="Character Mentor" Height="1000" Width="800"
+        Style="{StaticResource CustomWindowStyle}"
+        FontFamily="/Fonts/#Kelly Slab"
+        FontSize="14">
+    <Grid>
+        <Grid.Resources>
+            <DataTemplate DataType="{x:Type char_vms:CharacterViewModel}">
+                <char_views:CharacterView Height="1000" Width="800"/>
+            </DataTemplate>
+        </Grid.Resources>
+
+        <ContentControl Content="{Binding CurrentViewModel}"/>
+    </Grid>
+</Window>

@@ -1,0 +1,112 @@
+﻿<UserControl x:Class="Mentor.Views.Character.HeaderView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Mentor.Views.Character"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="800"
+             Style="{StaticResource {x:Type UserControl}}"
+             FontFamily="/Fonts/#Kelly Slab"
+             FontSize="14">
+    <UserControl.Resources>
+        <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="Padding" Value="4"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="TextBox" BasedOn="{StaticResource ComboBoxEditableTextBox}">
+            <Setter Property="Padding" Value="4"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="MinWidth" Value="50"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}" x:Key="Lefted">
+            <Setter Property="Padding" Value="4"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="MinWidth" Value="50"/>
+        </Style>
+
+        <Style TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
+            <Setter Property="Padding" Value="4"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="ComboBox" BasedOn="{StaticResource {x:Type ComboBox}}">
+            <Setter Property="Padding" Value="4"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="MinHeight" Value="27"/>
+        </Style>
+
+        <Style TargetType="CheckBox" BasedOn="{StaticResource {x:Type CheckBox}}">
+            <Setter Property="Padding" Value="4"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="GroupBox" BasedOn="{StaticResource ThinGroupBox}">
+            <Setter Property="Padding" Value="4"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+
+        <GroupBox Header="{Binding CharacterName}"
+                    Grid.Column="0"
+                    Style="{StaticResource SquaredGroupBox}">
+            <Image Source="/Res/Img/jJDfnJvsta0.jpg" Stretch="UniformToFill"/>
+        </GroupBox>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <WrapPanel 
+            Orientation="Horizontal"
+            Grid.Row="0">
+
+                <GroupBox Header="Имя Игрока">
+                    <TextBox Text="{Binding PlayerName}"/>
+                </GroupBox>
+
+                <GroupBox Header="Статус">
+                    <TextBox Text="{Binding Status}"/>
+                </GroupBox>
+
+                <GroupBox Header="Основная Рука">
+                    <ComboBox/>
+                </GroupBox>
+
+                <GroupBox Header="Рост">
+                    <TextBox Text="{Binding Height}"/>
+                </GroupBox>
+
+                <GroupBox Header="SM">
+                    <TextBox Text="{Binding SM}"/>
+                </GroupBox>
+            </WrapPanel>
+
+            <GroupBox Header="Заметки"
+                      Grid.Row="1">
+                <TextBox 
+                    Text="{Binding Notes}"
+                    Style="{StaticResource ComboBoxEditableTextBox}"/>
+            </GroupBox>
+
+        </Grid>
+    </Grid>
+</UserControl>
