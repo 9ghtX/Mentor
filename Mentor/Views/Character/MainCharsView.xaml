@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Mentor.Views.Character"
              mc:Ignorable="d" 
-             d:DesignHeight="960" d:DesignWidth="540">
+             d:DesignHeight="450" d:DesignWidth="400">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -58,6 +58,9 @@
                 Grid.Column="1"
                 Grid.Row="0"/>
             <TextBlock 
+                FontSize="18"
+                Foreground="Gray"
+                Text="[0]"
                 Grid.Column="2"
                 Grid.Row="0"/>
 
@@ -145,7 +148,7 @@
                 Grid.Column="0"
                 Grid.Row="0"/>
             <TextBox 
-                Text="{Binding HT}"
+                Text="{Binding HP}"
                 Grid.Column="1"
                 Grid.Row="0"/>
             <TextBlock

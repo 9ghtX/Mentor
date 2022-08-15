@@ -9,58 +9,101 @@
              Style="{StaticResource {x:Type UserControl}}"
              FontFamily="/Fonts/#Kelly Slab"
              FontSize="14">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+    <ScrollViewer
+        VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"
+                               MaxHeight="800"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-        <!--Шапка-->
-        <Grid
-            Grid.Row="0">
-            <local:HeaderView
+            <!--Шапка-->
+            <Grid
+                Grid.Row="0">
+                <local:HeaderView
                 DataContext="{Binding HeaderViewModel}"/>
-        </Grid>
+            </Grid>
 
-        <!--Характеристики-->
-        <Grid
-            Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+            <!--Характеристики-->
+            <Grid
+                Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
 
-            <GroupBox Style="{StaticResource SquaredGroupBox}"
-                      Padding=" 0 4 0 -2">
-                <local:MainCharsView
-                    DataContext="{Binding MainCharsViewModel}"/>
+                <GroupBox 
+                    Style="{StaticResource SquaredGroupBox}"
+                    Padding=" 0 4 0 -2"
+                    Grid.Column="0">
+                    <local:MainCharsView
+                        DataContext="{Binding MainCharsViewModel}"/>
+                </GroupBox>
+
+                <GroupBox 
+                    Style="{StaticResource SquaredGroupBox}"
+                    Padding=" 0 4 0 -2"
+                    Grid.Column="1">
+                    <local:StatusView/>
+                </GroupBox>
+            </Grid>
+
+            <GroupBox Header="Виды атак"
+                      Style="{StaticResource SquaredGroupBox}"
+                      Grid.Row="2">
+                <StackPanel 
+                    Orientation="Horizontal">
+                    <local:AtacksView
+                        Margin="10 0 10 0"/>
+                    <local:AtacksView
+                        Margin="10 0 10 0"/>
+                    <local:AtacksView
+                        Margin="10 0 10 0"/>
+                    <local:AtacksView
+                        Margin="10 0 10 0"/>
+                    
+                </StackPanel>
             </GroupBox>
+            
+            <!--Особенности и Навыки-->
+            <Grid
+                Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <GroupBox Header="Особенности"
+                      Grid.Column="0">
+                    <local:AdvAndDisadvView/>
+                </GroupBox>
+
+                <GroupBox Header="Умения"
+                      Grid.Column="1">
+                    <local:SkillsView/>
+                </GroupBox>
+            </Grid>
+
+            <!--Способности-->
+            <Grid
+                Grid.Row="4">
+                <GroupBox Header="Способности">
+                    <local:Abilities/>
+                </GroupBox>
+            </Grid>
+
+            <!--Снаряжение-->
+            <Grid
+                Grid.Row="5">
+                <GroupBox Header="Инвентарь">
+                    <local:Inventory/>
+                </GroupBox>
+            </Grid>
         </Grid>
-
-        <!--Особенности и Навыки-->
-        <Grid
-            Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-
-
-        </Grid>
-
-        <!--Способности-->
-        <Grid
-            Grid.Row="3">
-
-        </Grid>
-
-        <!--Снаряжение-->
-        <Grid
-            Grid.Row="4">
-
-        </Grid>
-    </Grid>
+    </ScrollViewer>
 </UserControl>
