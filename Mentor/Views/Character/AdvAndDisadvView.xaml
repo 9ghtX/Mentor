@@ -35,6 +35,9 @@
 
                             <GridViewColumn Header="Описание">
                             </GridViewColumn>
+
+                            <GridViewColumn Header="Цена">
+                            </GridViewColumn>
                         </GridView>
                     </ListView.View>
                 </ListView>
@@ -53,27 +56,15 @@
                             <Setter Property="HorizontalContentAlignment" Value="Center"/>
                         </Style>
                     </ListView.ItemContainerStyle>
-                    <ListViewItem/>
-                    <ListViewItem/>
-                    <ListViewItem/>
-                    <ListViewItem/>
-                    <ListViewItem/>
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="Наименование">
-                                <GridViewColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Text="Преимущество 1"/>
-                                    </DataTemplate>
-                                </GridViewColumn.CellTemplate>
                             </GridViewColumn>
 
                             <GridViewColumn Header="Описание">
-                                <GridViewColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Text="Описание 1"/>
-                                    </DataTemplate>
-                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Header="Цена">
                             </GridViewColumn>
                         </GridView>
                     </ListView.View>

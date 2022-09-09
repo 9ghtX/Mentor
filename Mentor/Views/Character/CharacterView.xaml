@@ -60,13 +60,7 @@
                     Orientation="Horizontal">
                     <local:AtacksView
                         Margin="10 0 10 0"/>
-                    <local:AtacksView
-                        Margin="10 0 10 0"/>
-                    <local:AtacksView
-                        Margin="10 0 10 0"/>
-                    <local:AtacksView
-                        Margin="10 0 10 0"/>
-                    
+
                 </StackPanel>
             </GroupBox>
             
@@ -101,7 +95,8 @@
             <Grid
                 Grid.Row="5">
                 <GroupBox Header="Инвентарь">
-                    <local:Inventory/>
+                    <local:Inventory
+                        DataContext="{Binding InventoryViewModel}"/>
                 </GroupBox>
             </Grid>
         </Grid>

@@ -1,15 +1,17 @@
-﻿using Mentor.ViewModels.Base;
+﻿using Mentor.Models;
+using Mentor.ViewModels.Base;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Mentor.ViewModels.Character
 {
-    internal class HeaderViewModel : ViewModelBase
+    internal class HeaderVM : VMBase
     {
-        private string _characterName = "Акира Акирман";
+        private string _characterName;
         public string CharacterName
         {
             get
@@ -23,7 +25,7 @@ namespace Mentor.ViewModels.Character
             }
         }
 
-        private string _playerName = "Дэбич";
+        private string _playerName;
         public string PlayerName
         {
             get
@@ -37,8 +39,8 @@ namespace Mentor.ViewModels.Character
             }
         }
 
-        private int _stasus = 0;
-        public int Status
+        private string _stasus;
+        public string Status
         {
             get
             {
@@ -51,7 +53,7 @@ namespace Mentor.ViewModels.Character
             }
         }
 
-        private int _height = 180;
+        private int _height;
         public int Height
         {
             get
@@ -65,7 +67,7 @@ namespace Mentor.ViewModels.Character
             }
         }
 
-        private int _SM = 0;
+        private int _SM;
         public int SM
         {
             get
@@ -79,7 +81,7 @@ namespace Mentor.ViewModels.Character
             }
         }
 
-        private string _notes = "Описание...";
+        private string _notes;
         public string Notes
         {
             get
@@ -91,6 +93,36 @@ namespace Mentor.ViewModels.Character
                 _notes = value;
                 OnPropertyChanged(nameof(Notes));
             }
+        }
+
+        private readonly ObservableCollection<string> _mainArm;
+        public IEnumerable<string> MainArm => _mainArm;
+
+        private int _selectedMainArm;
+        public int SelectedMainArm
+        {
+            get
+            {
+                return _selectedMainArm;
+            }
+            set
+            {
+                _selectedMainArm = value;
+                OnPropertyChanged(nameof(SelectedMainArm));
+            }
+        }
+
+        public HeaderVM(Models.Character character)
+        {
+            _mainArm = new ObservableCollection<string> { "Правая", "Левая" };
+
+            CharacterName = character.Name;
+            PlayerName = character.PlayerName;
+            Status = character.Status;
+            Height = character.Height;
+            SM = character.SM;
+            Notes = character.Notes;
+            SelectedMainArm = character.MainArm;
         }
     }
 }

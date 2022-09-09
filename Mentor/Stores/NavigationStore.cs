@@ -9,8 +9,8 @@ namespace Mentor.Stores
 {
     internal class NavigationStore
     {
-        private ViewModelBase _currentViewModel;
-        public ViewModelBase CurrentViewModel
+        private VMBase _currentViewModel;
+        public VMBase CurrentViewModel
         {
             get => _currentViewModel;
             set

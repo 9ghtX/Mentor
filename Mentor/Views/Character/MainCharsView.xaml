@@ -54,7 +54,7 @@
                 Grid.Column="0"
                 Grid.Row="0"/>
             <TextBox 
-                Text="{Binding ST}"
+                Text="{Binding ST, UpdateSourceTrigger=PropertyChanged}"
                 Grid.Column="1"
                 Grid.Row="0"/>
             <TextBlock 
@@ -69,10 +69,13 @@
                 Grid.Column="0"
                 Grid.Row="1"/>
             <TextBox 
-                Text="{Binding DX}"
+                Text="{Binding DX, UpdateSourceTrigger=PropertyChanged}"
                 Grid.Column="1"
                 Grid.Row="1"/>
             <TextBlock
+                FontSize="18"
+                Foreground="Gray"
+                Text="[0]"
                 Grid.Column="2"
                 Grid.Row="1"/>
 
@@ -81,10 +84,13 @@
                 Grid.Column="0"
                 Grid.Row="2"/>
             <TextBox 
-                Text="{Binding IN}"
+                Text="{Binding IN, UpdateSourceTrigger=PropertyChanged}"
                 Grid.Column="1"
                 Grid.Row="2"/>
             <TextBlock
+                FontSize="18"
+                Foreground="Gray"
+                Text="[0]"
                 Grid.Column="2"
                 Grid.Row="2"/>
 
@@ -93,10 +99,13 @@
                 Grid.Column="0"
                 Grid.Row="3"/>
             <TextBox 
-                Text="{Binding HT}"
+                Text="{Binding HT, UpdateSourceTrigger=PropertyChanged}"
                 Grid.Column="1"
                 Grid.Row="3"/>
             <TextBlock
+                FontSize="18"
+                Foreground="Gray"
+                Text="[0]"
                 Grid.Column="2"
                 Grid.Row="3"/>
 
@@ -148,7 +157,7 @@
                 Grid.Column="0"
                 Grid.Row="0"/>
             <TextBox 
-                Text="{Binding HP}"
+                Text="{Binding HP, UpdateSourceTrigger=PropertyChanged}"
                 Grid.Column="1"
                 Grid.Row="0"/>
             <TextBlock
@@ -160,7 +169,7 @@
                 Grid.Column="0"
                 Grid.Row="1"/>
             <TextBox 
-                Text="{Binding Move}"
+                Text="{Binding Move, UpdateSourceTrigger=PropertyChanged}"
                 Grid.Column="1"
                 Grid.Row="1"/>
             <TextBlock
@@ -172,7 +181,7 @@
                 Grid.Column="0"
                 Grid.Row="2"/>
             <TextBox 
-                Text="{Binding Speed}"
+                Text="{Binding Speed, UpdateSourceTrigger=PropertyChanged}"
                 Grid.Column="1"
                 Grid.Row="2"/>
             <TextBlock
@@ -184,7 +193,7 @@
                 Grid.Column="0"
                 Grid.Row="3"/>
             <TextBox 
-                Text="{Binding Will}"
+                Text="{Binding Will, UpdateSourceTrigger=PropertyChanged}"
                 Grid.Column="1"
                 Grid.Row="3"/>
             <TextBlock
@@ -196,7 +205,7 @@
                 Grid.Column="0"
                 Grid.Row="4"/>
             <TextBox 
-                Text="{Binding Per}"
+                Text="{Binding Per, UpdateSourceTrigger=PropertyChanged}"
                 Grid.Column="1"
                 Grid.Row="4"/>
             <TextBlock
@@ -208,7 +217,7 @@
                 Grid.Column="0"
                 Grid.Row="5"/>
             <TextBox 
-                Text="{Binding FP}"
+                Text="{Binding FP, UpdateSourceTrigger=PropertyChanged}"
                 Grid.Column="1"
                 Grid.Row="5"/>
             <TextBlock

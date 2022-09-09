@@ -1,13 +1,16 @@
-﻿using Mentor.ViewModels.Base;
+﻿using Mentor.Commands.MainChars;
+using Mentor.Models;
+using Mentor.ViewModels.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Mentor.ViewModels.Character
 {
-    internal class MainCharsViewModel : ViewModelBase
+    internal class MainCharsVM : VMBase
     {
         // MainChars //
         private int _ST = 10;
@@ -20,6 +23,7 @@ namespace Mentor.ViewModels.Character
             set
             {
                 _ST = value;
+                CountHP.Execute(_ST);
                 OnPropertyChanged(nameof(ST));
             }
         }
@@ -152,8 +156,15 @@ namespace Mentor.ViewModels.Character
             }
         }
 
-        public MainCharsViewModel()
+        public MainCharsVM(Models.Character character)
         {
+            CountHP = new CountHP(this);
+
+            ST = character.ST;
+            IN = character.IN;
+            DX = character.DX;
+            HT = character.HT;
+
             HP = ST;
             Speed = (DX + HT) / 4;
             Move = (int)Math.Round(Speed, 1);
@@ -161,5 +172,12 @@ namespace Mentor.ViewModels.Character
             Per = IN;
             FP = HT;
         }
+
+        ICommand CountHP { get; }
+        ICommand CountSpeed { get; }
+        ICommand CountMove { get; }
+        ICommand CountWill { get; }
+        ICommand CountPer { get; }
+        ICommand CountFP { get; }
     }
 }

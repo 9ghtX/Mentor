@@ -14,7 +14,7 @@
         WindowState="Maximized">
     <Grid>
         <Grid.Resources>
-            <DataTemplate DataType="{x:Type char_vms:CharacterViewModel}">
+            <DataTemplate DataType="{x:Type char_vms:CharacterVM}">
                 <char_views:CharacterView/>
             </DataTemplate>
         </Grid.Resources>

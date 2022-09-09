@@ -88,7 +88,9 @@
                 </GroupBox>
 
                 <GroupBox Header="Основная Рука">
-                    <ComboBox/>
+                    <ComboBox 
+                        ItemsSource="{Binding MainArm}"
+                        SelectedIndex="{Binding SelectedMainArm, UpdateSourceTrigger=PropertyChanged}"/>
                 </GroupBox>
 
                 <GroupBox Header="Рост">

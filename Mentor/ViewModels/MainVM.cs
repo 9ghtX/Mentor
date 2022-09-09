@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Mentor.ViewModels
 {
-    internal class MainViewModel : ViewModelBase
+    internal class MainVM : VMBase
     {
         private readonly NavigationStore _navigationStore;
 
-        public MainViewModel(NavigationStore navigationStore)
+        public MainVM(NavigationStore navigationStore)
         {
             _navigationStore = navigationStore;
 
@@ -24,6 +24,6 @@ namespace Mentor.ViewModels
             OnPropertyChanged(nameof(CurrentViewModel));
         }
 
-        public ViewModelBase CurrentViewModel => _navigationStore.CurrentViewModel;
+        public VMBase CurrentViewModel => _navigationStore.CurrentViewModel;
     }
 }
