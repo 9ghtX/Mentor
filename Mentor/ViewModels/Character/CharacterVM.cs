@@ -11,7 +11,7 @@ namespace Mentor.ViewModels.Character
     internal class CharacterVM : VMBase
     {
         public VMBase HeaderViewModel { get; }
-        public VMBase MainCharsViewModel { get; }
+        public MainCharsVM MainCharsViewModel { get; }
         public VMBase InventoryViewModel { get; }
         public VMBase AtacksVM { get; }
 
@@ -19,7 +19,7 @@ namespace Mentor.ViewModels.Character
         {
             HeaderViewModel = new HeaderVM(character);
             MainCharsViewModel = new MainCharsVM(character);
-            InventoryViewModel = new InventoryVM(character);
+            InventoryViewModel = new InventoryVM(character, this);
             AtacksVM = new AtacksVM((InventoryVM)InventoryViewModel);
         }
     }

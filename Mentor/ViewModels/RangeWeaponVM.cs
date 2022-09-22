@@ -1,5 +1,6 @@
 ﻿using Mentor.Commands.Weapon;
 using Mentor.Models;
+using Mentor.ViewModels.Character;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace Mentor.ViewModels
         public int Shots { get; }
         public int Rcl { get; }
 
-        public RangeWeaponVM(RangeWeapon weapon) : base(weapon)
+        public RangeWeaponVM(RangeWeapon weapon, CharacterVM characterVM) : base(weapon)
         {
             this.weapon = weapon;
 
@@ -33,8 +34,6 @@ namespace Mentor.ViewModels
             ROF = weapon.ROF;
             Shots = weapon.Shots;
             Rcl = weapon.Rcl;
-
-            Atack = new Atack();
         }
 
         ICommand Atack { get; }
