@@ -8,8 +8,23 @@ namespace Mentor.Interfaces
 {
     internal interface IWeapon
     {
-        void Atack(int damage);
-        void Parry();
-        void Block();
+        int[] Damage { get; set; }
+        int ST { get; set; }
+
+        int Atack()
+        {
+            Random rand = new();
+            return rand.Next(Damage[0], Damage[1]);
+        }
+        int Parry()
+        {
+            Random rand = new();
+            return rand.Next(3, 18);
+        }
+        int Block()
+        {
+            Random rand = new();
+            return rand.Next(3, 18);
+        }
     }
 }

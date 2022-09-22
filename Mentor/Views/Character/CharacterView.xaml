@@ -53,15 +53,11 @@
                 </GroupBox>
             </Grid>
 
-            <GroupBox Header="Виды атак"
+            <GroupBox Header="Оружие"
                       Style="{StaticResource SquaredGroupBox}"
                       Grid.Row="2">
-                <StackPanel 
-                    Orientation="Horizontal">
-                    <local:AtacksView
-                        Margin="10 0 10 0"/>
-
-                </StackPanel>
+                <local:AtacksView
+                    DataContext="{Binding AtacksVM}"/>
             </GroupBox>
             
             <!--Особенности и Навыки-->

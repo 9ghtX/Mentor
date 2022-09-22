@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Mentor.ViewModels.Base
 {
-    internal class VMBase : INotifyPropertyChanged
+    internal abstract class VMBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged;
 

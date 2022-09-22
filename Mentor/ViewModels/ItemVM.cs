@@ -14,7 +14,7 @@ namespace Mentor.ViewModels
 
         public string Name => item.Name;
         public string Description => item.Description;
-        public int Weight => item.Weight;
+        public float Weight => item.Weight;
         public int LC => item.LC;
 
         public ItemVM(Item item)

@@ -11,7 +11,7 @@ namespace Mentor.Models
     {
         public int Durability { get; set; }
         
-        public Armor(string name, string description = "", int weight = 0, int lc = 0) : base(name, description, weight, lc)
+        public Armor(string name, string description = "") : base(name, description)
         {
             
         }

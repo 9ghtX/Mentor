@@ -17,8 +17,19 @@ namespace Mentor.ViewModels.Character
         public InventoryVM(Models.Character character)
         {
             inventory = new ObservableCollection<ItemVM>();
-            foreach (Item item in character.Inventory)
+            foreach (var item in character.Inventory)
             {
+                if (item is RangeWeapon)
+                {
+                    inventory.Add(new RangeWeaponVM((RangeWeapon)item));
+                    continue;
+                }
+                    
+                if (item is MeleeWeapon)
+                {
+                    inventory.Add(new MeleeWeaponVM((MeleeWeapon)item));
+                    continue;
+                }
                 inventory.Add(new ItemVM(item));
             }
         }

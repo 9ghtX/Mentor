@@ -13,12 +13,14 @@ namespace Mentor.ViewModels.Character
         public VMBase HeaderViewModel { get; }
         public VMBase MainCharsViewModel { get; }
         public VMBase InventoryViewModel { get; }
+        public VMBase AtacksVM { get; }
 
         public CharacterVM(Models.Character character)
         {
             HeaderViewModel = new HeaderVM(character);
             MainCharsViewModel = new MainCharsVM(character);
             InventoryViewModel = new InventoryVM(character);
+            AtacksVM = new AtacksVM((InventoryVM)InventoryViewModel);
         }
     }
 }
