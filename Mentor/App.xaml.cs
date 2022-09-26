@@ -6,7 +6,10 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -19,13 +22,15 @@ namespace Mentor
     {
         private readonly NavigationStore _navigationStore;
 
-        private Character character = new Character("Test");
+        private Character character = new Character("Dummy");
+        private SqlConnection sqlConnection;
 
         public App()
         {
-            _navigationStore = new NavigationStore();
+            _navigationStore = new();
+            sqlConnection = new(ConfigurationManager.ConnectionStrings["TestDB"].ConnectionString);
 
-            character.PlayerName = "Dummy";
+            character.PlayerName = "Player";
             character.Height = 180;
             character.SM = 0;
             character.Status = "Scout";
@@ -82,6 +87,8 @@ namespace Mentor
             character.IN = 10;
             character.DX = 10;
             character.HT = 10;
+
+            character.Save();
         }
 
         protected override void OnStartup(StartupEventArgs e)

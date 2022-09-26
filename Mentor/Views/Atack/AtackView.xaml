@@ -54,17 +54,23 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
 
             <TextBlock Text="{Binding WeaponName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                        Grid.Row="0"/>
 
             <StackPanel Grid.Row="1">
-                <TextBlock Text="Damage"/>
-                <TextBox Text="{Binding Dmg, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                <TextBlock Text="Min Damage"/>
+                <TextBox Text="{Binding MinDmg, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
             </StackPanel>
 
             <StackPanel Grid.Row="2">
+                <TextBlock Text="Max Damage"/>
+                <TextBox Text="{Binding MaxDmg, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="3">
                 <TextBlock Text="Reach"/>
                 <TextBox Text="{Binding Reach, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
             </StackPanel>

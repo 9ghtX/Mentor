@@ -1,7 +1,12 @@
-﻿using System;
+﻿using Mentor.ViewModels.Character;
+using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Mentor.Models
@@ -49,6 +54,15 @@ namespace Mentor.Models
             PlayerName = "";
             Status = "";
             Notes = "";
+        }
+
+        public void Save()
+        {
+            var options = new JsonSerializerOptions{ WriteIndented = true };
+            using (FileStream fs = new FileStream($"{this.Name}.json", FileMode.OpenOrCreate))
+            {
+                JsonSerializer.SerializeAsync<Character>(fs, this, options);
+            }
         }
     }
 }

@@ -21,7 +21,11 @@ namespace Mentor.Commands.AtackView
             Random rand = new();
             int result = rand.Next(3, 18);
             if (result > meleeAtackWindowVM.Skill) meleeAtackWindowVM.AtackResult = $"[{result} vs {meleeAtackWindowVM.Skill}] Fail!";
-            else meleeAtackWindowVM.AtackResult = $"[{result} vs {meleeAtackWindowVM.Skill}] Success!";
+            else
+            {
+                meleeAtackWindowVM.AtackResult = $"[{result} vs {meleeAtackWindowVM.Skill}] Success!";
+                meleeAtackWindowVM.DmgResult = rand.Next(meleeAtackWindowVM.MinDmg, meleeAtackWindowVM.MaxDmg);
+            }
         }
     }
 }
